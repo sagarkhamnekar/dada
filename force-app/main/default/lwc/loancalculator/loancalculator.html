@@ -1,20 +1,23 @@
 <template>
     
-    <lightning-card title="Loan EMI Calculator">
-        <div class="slds-p-around_medium">
-            <lightning-input type="number" label="Loan Amount" value={loanAmount} onchange={handleLoanAmountChange}></lightning-input>
-            <lightning-input type="number" label="Tenure (Months)" value={tenure} onchange={handleTenureChange}></lightning-input>
-            <lightning-input type="number" label="Annual Interest Rate (%)" value={interestRate} onchange={handleInterestRateChange}></lightning-input>
+    
+    
+    <div class="container">
+        <lightning-card title="Loan EMI Calculator">
+            <div class="content">
+                <lightning-input label="Loan Amount" type="number" onchange={handleLoanAmountChange}></lightning-input>
+                <lightning-input label="Tenure (Months)" type="number" onchange={handleTenureChange}></lightning-input>
+                <lightning-input label="Interest Rate (%)" type="number" onchange={handleInterestRateChange}></lightning-input>
 
-            <lightning-button label="Calculate EMI" onclick={calculateEMI} class="slds-m-top_medium"></lightning-button>
+                <lightning-button label="Calculate EMI" class="slds-m-top_medium" onclick={calculateEMI}></lightning-button>
 
-            <template if:true={emi}>
-                <div class="slds-m-top_medium">
-                    <p><strong>Monthly EMI:</strong> ₹ {emi}</p>
-                </div>
-            </template>
-        </div>
-    </lightning-card>
-
-
+                <template if:true={emi}>
+                    <p class="result">Monthly EMI: ₹ {emi}</p>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
 </template>
+
+
+
