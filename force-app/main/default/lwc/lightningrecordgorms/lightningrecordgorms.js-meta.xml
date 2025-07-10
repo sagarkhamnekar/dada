@@ -5,10 +5,15 @@
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__AppPage,lightning__HomePage">
-            <property name="recordId" type="String" label="Record Id" description="Contact Record Id to show/edit" />
+            <property 
+                name="recordId" 
+                type="String" 
+                label="Record Id" 
+                description="Record Id to show or edit"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
